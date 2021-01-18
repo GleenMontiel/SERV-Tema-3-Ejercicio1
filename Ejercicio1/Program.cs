@@ -45,18 +45,20 @@ namespace Ejercicio1
                                 sw.Flush();
                                 break;
                             case "TODO":
-                                sw.WriteLine("The current time is {0}", CurrentTime());
-                                sw.WriteLine("The current date is {0}", CurrentDate());
+                                sw.WriteLine("The current time is {0} and the current date is {0}", CurrentTime(), CurrentDate());
                                 sw.Flush();
                                 break;
                             case "APAGAR":
-                                Console.WriteLine("Client disconnected.\nConnection closed");
-                                sw.Close();
+                                //Console.WriteLine("Client disconnected.\nConnection closed");
+                                
+                                sw.WriteLine("Client disconnected.\nConnection closed");
+                                sw.Flush();
+                                /*sw.Close();
                                 sr.Close();
                                 ns.Close();
                                 sClient.Close();
                                 s.Close();
-                                command = null;
+                                command = null;*/
                                 break;
                             default:
                                 break;
@@ -68,7 +70,7 @@ namespace Ejercicio1
                     break;
                 }
             }
-            Console.WriteLine("Client disconnected.\nConnection closed");
+           Console.WriteLine("Client disconnected.\nConnection closed");
             sw.Close();
             sr.Close();
             ns.Close();
@@ -87,12 +89,4 @@ namespace Ejercicio1
             return dateTime.ToString("dd/MM/yyyy");
         }
     }
-
-
 }
-
-/*
-Realiza un servidor de fecha y hora. Aceptará los comandos: HORA (hora, minutos y segundos)),
-FECHA (día, mes y año), TODO (hora y fecha), APAGAR (El servidor se cierra). Dependiendo del
-comando que reciba enviará la información correspondiente.
- */
